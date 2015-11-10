@@ -1,31 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Massages</h1>
+<h1>New Messages</h1>
+<%= render 'form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Signature</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Listing Messages</h1>
     <% @massages.each do |massage| %>
-      <tr>
-        <td><%= massage.title %></td>
-        <td><%= massage.body %></td>
-        <td><%= massage.signature %></td>
-        <td><%= link_to 'Show', massage %></td>
-        <td><%= link_to 'Edit', edit_massage_path(massage) %></td>
-        <td><%= link_to 'Destroy', massage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <hr>
+      <dl>
+        <dt>タイトル:</dt><dd><%= massage.title %></dd>
+        <dt>投稿日:</dt><dd><%= massage.created_at %></dd>
+        <dt>本文:</dt><dd><%= massage.body %></dd>
+        <dt>投稿者:</dt><dd><%= massage.signature %></dd>
+      </dl>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Massage', new_massage_path %>
