@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>New Messages</h1>
+<%= render 'form' %>
+
+<h1>Listing Messages</h1>
+    <% @massages.each do |massage| %>
+      <hr>
+      <dl>
+        <dt>タイトル:</dt><dd><%= massage.title %></dd>
+        <dt>投稿日:</dt><dd><%= massage.created_at %></dd>
+        <dt>本文:</dt><dd><%= massage.body %></dd>
+        <dt>投稿者:</dt><dd><%= massage.signature %></dd>
+      </dl>
+    <% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @massage.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @massage.body %>
+</p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @massage.signature %>
+</p>
+
+<%= link_to 'Edit', edit_massage_path(@massage) %> |
+<%= link_to 'Back', massages_path %>
